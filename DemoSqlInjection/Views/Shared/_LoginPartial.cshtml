@@ -1,0 +1,13 @@
+﻿
+@using DemoSqlInjection.Models
+@{
+    if (Session["Account"] == null)
+    {
+        <a class="nav navbar-brand" href="@Url.Action("Login","Home")">Login</a>
+    }
+    else
+    {
+        AccountModel acc = Session["Account"] as AccountModel;
+        <a class="nav navbar-brand">@acc.Account</a>
+    }
+}
